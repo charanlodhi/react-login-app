@@ -1,0 +1,91 @@
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ddd9d9;
+  opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #ddd9d9;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+  color: #ddd9d9;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+.left{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(170deg, rgba(50,128,238,1) 30%, rgba(3,67,155,1) 66%, rgba(6,48,106,1) 89%);
+}
+.bg-dark{
+  background: linear-gradient(170deg, rgba(50,128,238,1) 30%, rgba(3,67,155,1) 66%, rgba(6,48,106,1) 89%);
+}
+.left img{
+  width: 50%;
+}
+
+.right{
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:0 10%;
+}
+.right .form{
+  width: 100%;
+}
+
+.right .form input{
+  border-radius: 10px;
+  padding: 10px 0 10px 15px;
+  border:2px solid #ddd9d9;
+
+}
+.right .form button{
+  padding: 8px 25px;
+  border-radius: 25px;
+  border: none;
+  background: #0061E6;
+  margin-top: 20px;
+  color: #fff;
+}
+.right .form input ~ input{
+  margin: 10px 0 7px 0 ;
+}
+.right h2{
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+.right .form a{text-decoration: none;}
+.right .form a:hover{
+text-decoration: none;
+}
+.right .form a span{
+  font-style: italic;
+  color: #0066ff;
+  font-weight: 400;
+  font-size: 15px;
+  text-decoration: none;
+}
+.right .form .viewicon{
+  background: url("../public/img//view.png") left top no-repeat; 
+  width: 26px;
+  height: 26px;
+  background-size: 100%;
+  position: absolute;
+  right: 17px;
+  top: 10px;
+  cursor: pointer;    
+}
+@media (max-width:992px){
+  .left, .right{
+  height: auto;
+  padding: 10%;
+  }
+}
