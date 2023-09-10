@@ -47,27 +47,31 @@ const showPassword = () => {
               <div className="form">
                 <h2>Log in to your account</h2>
                 <div className="mb-3">
-                  {" "}
+                  <label htmlFor="email">email</label>
                   <input
+                  aria-labelledby ="email"
                     className="form-control"
-                    type="text"
+                    type="email"
+                    data-testid="input-email"
                     value={email}
                     onChange={handleEmailchange}
                     //onChange={(e) => setEmail(e.target.value)}
 
                   />
-                  {emailErrors && <p className="text-danger">{emailErrors}</p>}
+                 {email && !(/\S+@\S+\.\S+/).test(email) && <span className="error" data-testid="error-msg">Please enter a valid email.</span>}
+                  {/* <div data-testid="error-msg"> {emailErrors && <p className="text-danger">{emailErrors}</p>}</div> */}
                 </div>
 
                 <div className="mb-3 position-relative">
                   <input
                     className="form-control"
+                    data-testid="input-password"
                     type={showPass ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
                   {passErrors && <p className="text-danger">{passErrors}</p>}
-                  <div className="viewicon" onClick={showPassword}></div>
+                  <div className="viewicon" data-testid="view-icon" onClick={showPassword}></div>
                 </div>
                 <div className="mb-3">
                   {" "}
@@ -76,7 +80,7 @@ const showPassword = () => {
                   </a>
                 </div>
                 <div className="mb-3">
-                  <button type="submit">LOGIN</button>
+                  <button type="submit" data-testid="submit-button">LOGIN</button>
                 </div>
               </div>
             </div>
